@@ -5,7 +5,6 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import styles from "./page.module.css";
 
-import React from 'react';
 // Object to test tasks passed as props
 const defaultTodos = [
   {text:'Cut Onion', completed:false},
@@ -19,7 +18,7 @@ const defaultTodos = [
 //  Components are Capitalized
 export default function Home() {
   return (
-    <React.Fragment>
+    <>
         <main className={styles.main}>
       {/* Technique to Create fist the components structure,
       later create the components functions.*/}
@@ -41,7 +40,7 @@ export default function Home() {
       <CreateTodoButton />
 
       </main>
-    </React.Fragment>
+    </>
 
   );
 }

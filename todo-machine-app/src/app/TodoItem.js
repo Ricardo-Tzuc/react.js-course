@@ -1,9 +1,9 @@
 // Component list items
-function  TodoItem(){
+function  TodoItem(props){
     return (
       <li>
         <span>V</span>
-        <p>Cry while codding</p>
+        <p>{props.text}</p>
         <span>X</span>
       </li>
     );

@@ -5,23 +5,36 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import styles from "./page.module.css";
 
+const defaultTodos = [
+  {text:'Cut Onion', completed:false},
+  {text:'Take React.js course', completed:false},
+  {text:'Cry while codding', completed:false},
+  {text:'LALALAL', completed:false},
+]
 //  Components are Capitalized
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <>
+        <main className={styles.main}>
       {/* Technique to Create fist the components structure,
       later create the components functions.*/}
-      <TodoCounter />
+      <TodoCounter completed={16} total={25} />
+
       <TodoSearch />
 
       <TodoList>
-        <TodoItem/>
-        <TodoItem/>
-        <TodoItem/>
+        {defaultTodos.map(todo => (
+          <TodoItem
+          key={todo.key}
+          text={todo.text}
+          />
+        ))}
       </TodoList>
 
       <CreateTodoButton />
 
-    </main>
+      </main>
+    </>
+
   );
 }

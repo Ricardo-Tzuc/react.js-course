@@ -1,9 +1,9 @@
-function  TodoList(props){
+function  TodoList({children}){
     return (
         <ul>
             {/* React transforms the children property
             as the elements inside the parent tag. */}
-            {props.children}
+            {children}
         </ul>
     );
   }

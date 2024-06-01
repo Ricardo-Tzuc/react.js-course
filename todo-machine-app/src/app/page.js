@@ -5,12 +5,17 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import styles from "./page.module.css";
 
+
+// Object to test tasks passed as props
 const defaultTodos = [
   {text:'Cut Onion', completed:false},
   {text:'Take React.js course', completed:false},
   {text:'Cry while codding', completed:false},
   {text:'LALALAL', completed:false},
 ]
+
+
+
 //  Components are Capitalized
 export default function Home() {
   return (
@@ -23,9 +28,11 @@ export default function Home() {
       <TodoSearch />
 
       <TodoList>
+        {/* Logic in JS to iterate in each element in the object
+        and return arrays to be displayed. */}
         {defaultTodos.map(todo => (
           <TodoItem
-          key={todo.key}
+          // key={todo.key}
           text={todo.text}
           />
         ))}

@@ -5,11 +5,12 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import styles from "./page.module.css";
 
-// Object to test tasks passed as props
+// Object to test tasks passed as props (Rendering Arrays)
 const defaultTodos = [
-  {text:'Cut Onion', completed:false},
+  {text:'Cut Onion', completed: true},
   {text:'Take React.js course', completed:false},
   {text:'Cry while codding', completed:false},
+  {text:'LALALAL', completed:false},
   {text:'LALALAL', completed:false},
 ]
 
@@ -31,10 +32,13 @@ export default function Home() {
         and return arrays to be displayed. */}
         {defaultTodos.map(todo => (
           <TodoItem
-          // key={todo.key}
+          key={todo.text}
           text={todo.text}
+          completed={todo.completed}
           />
         ))}
+        {/* Rendering arrays by creating new TodoItems with Map,
+        Map method creates new arrays. */}
       </TodoList>
 
       <CreateTodoButton />

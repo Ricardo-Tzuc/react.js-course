@@ -1,10 +1,11 @@
 // Component list items
+import './TodoItem.css'
 function  TodoItem(props){
     return (
       <li>
-        <span>V</span>
+        <span className='done'>V</span>
         <p>{props.text} {String(props.completed)}</p>
-        <span>X</span>
+        <span className='delete'>X</span>
       </li>
     );
   }

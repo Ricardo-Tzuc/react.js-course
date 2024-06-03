@@ -5,7 +5,7 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import styles from "./page.module.css";
 
-// Object to test tasks passed as props (Rendering Arrays)
+// Array of objects to test tasks passed as props (Rendering Arrays)
 const defaultTodos = [
   {text:'Cut Onion', completed: true},
   {text:'Take React.js course', completed:false},

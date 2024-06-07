@@ -25,10 +25,6 @@ export default function Home() {
     // this state (comes from TodoSearch) was moved to be created in the parent component:
     const [searchValue, setSearchValue] = useState('');
     // setSearchValue is an special function to update the state.
-
-    /* this console.log is the prove that the communication
-    between parent-child components. */
-    console.log("user wrote: "+ searchValue);
     
 
     // derived states: variables/properties/calculations/ that comes from states.
@@ -46,6 +42,14 @@ export default function Home() {
       return todoText.includes(searchedText);
     }
     )
+
+    const completeTodos = (text) => {
+      const newTodos = [...todos];
+      const indexTodo = newTodos.findIndex(todo => todo.text == text);
+      newTodos[indexTodo].completed = true
+      setTodos(newTodos);
+    }
+
   return (
     <>
       <main className={styles.main}>
@@ -62,6 +66,7 @@ export default function Home() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onComplete = {()=>completeTodos(todo.text)}
             />
           ))}
           {/* Rendering arrays by creating new TodoItems with Map,

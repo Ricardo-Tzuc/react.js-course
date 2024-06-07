@@ -1,15 +1,8 @@
-'use client';
+// 'use client';
 import './TodoSearch.css'
-import {useState} from 'react';
-
-function  TodoSearch(){
-
-    // useState is a function, state can be updated and consumed.
-    // useState receive a default initial state to give to the first render
-    const [searchValue, setSearchValue] = useState('');
-    // setSearchValue is an special function to update the state.
-
-    console.log("user wrote: "+ searchValue);
+// state changed to the main component to handle better the communication 
+// between parent-child components.
+function  TodoSearch({searchValue, setSearchValue}){
 
     return (
         <input 

@@ -34,6 +34,18 @@ export default function Home() {
     // derived states: variables/properties/calculations/ that comes from states.
     const completedTodos = todos.filter(todo => !!todo.completed).length; //counts the completed ones.
     const totalTodos = todos.length; // tells the total current tasks.
+
+    // this derived state is used to filter the todos based on the user input.
+    const searchedTodos = todos.filter( (todo) => {
+      // iterated todo in lowercase
+      const todoText = todo.text.toLowerCase();
+      // input value in lowercase
+      const searchedText = searchValue.toLowerCase();
+
+      // does the todo with lower case match with the input in lowercase?
+      return todoText.includes(searchedText);
+    }
+    )
   return (
     <>
       <main className={styles.main}>
@@ -44,9 +56,8 @@ export default function Home() {
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
         <TodoList>
-          {/* Logic in JS to iterate in each element in the object
-          and return arrays to be displayed. */}
-          {defaultTodos.map(todo => (
+          {/* SearchedTodos is now the reference to display todos */}
+          {searchedTodos.map(todo => (
             <TodoItem
             key={todo.text}
             text={todo.text}
